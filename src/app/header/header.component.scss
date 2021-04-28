@@ -1,0 +1,48 @@
+@import "../../sass/variables";
+
+:host {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.menu {
+  padding: 0.5rem;
+  background-image: linear-gradient(to right, blue, #311b9291);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  .menu__logout {
+    color: $logout-text-color;
+    text-align: left;
+    font-size: 1.4rem;
+    width: max-content;
+    background-color: $logout-bg-color;
+    border-radius: 18px;
+    padding: 8px;
+    cursor: pointer;
+
+    &:hover,
+    :active {
+      background-color: $logout-text-color;
+      color: $logout-bg-color;
+    }
+  }
+
+  .menu__page-title {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    color: $page-title-text-color;
+  }
+}
+
+.company-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  font-family: cursive, serif;
+  font-style: italic;
+}

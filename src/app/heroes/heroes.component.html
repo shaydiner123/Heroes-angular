@@ -1,0 +1,8 @@
+<app-header></app-header>
+
+<h1>Heroes</h1>
+
+<div class="hero-boxes-container">
+  <app-hero-box *ngFor="let hero of heroes" [hero]="hero"></app-hero-box>
+  <div *ngIf="heroes.length === 0">You currently have no heroes</div>
+</div>

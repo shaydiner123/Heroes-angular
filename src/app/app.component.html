@@ -1,0 +1,4 @@
+<app-error *ngIf="error !== undefined" (handleErrorEmiiter)="error = undefined"
+  >{{ error }}
+</app-error>
+<router-outlet></router-outlet>

@@ -1,0 +1,36 @@
+<div class="box">
+  <div>
+    <h2>Hero Id</h2>
+    <span>{{ hero.id }}</span>
+  </div>
+  <div>
+    <h2>Name</h2>
+    <span>{{ hero.name | titlecase }}</span>
+  </div>
+  <div>
+    <h2>Ability</h2>
+    <span>{{ hero.abilityName }}</span>
+  </div>
+  <div>
+    <h2>Suit colors</h2>
+    <span *ngFor="let color of hero.suitColors">{{ color + " " }}</span>
+  </div>
+  <div>
+    <h2>Training start date</h2>
+    <span>{{ hero.trainingStartDate | date: "dd/MM/yy" }}</span>
+  </div>
+  <div>
+    <h2>Starting power</h2>
+    <span>{{ hero.startingPower }}</span>
+  </div>
+  <div>
+    <h2>Current power</h2>
+    <span>{{ hero.currentPower | numberFormatting }}</span>
+  </div>
+  <div>
+    <button type="button" (click)="trainHero()">Train me!</button>
+  </div>
+  <div class="error" *ngIf="isHeroAlreadyTrainedFiveTimesToday">
+    <p>This hero already trained 5 times today</p>
+  </div>
+</div>

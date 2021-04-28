@@ -1,0 +1,32 @@
+@import "../../../sass/variables";
+
+.box {
+  border: 1px $hero-box-border-color solid;
+  text-align: center;
+  width: 80%;
+  max-width: 300px;
+  min-width: 180px;
+  margin-bottom: 1rem;
+  background-color: $hero-box-bg-color;
+  color: $hero-box-text-color;
+
+  button {
+    background-color: $hero-box-btn-bg-color;
+    color: $hero-box-btn-text-color;
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    &:hover,
+    :active {
+      background-color: $hero-box-btn-text-color;
+      color: $hero-box-btn-bg-color;
+    }
+  }
+
+  .error {
+    color: $hero-box-error-text-color;
+    font-size: 1.2rem;
+  }
+}

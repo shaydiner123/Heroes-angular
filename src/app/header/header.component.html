@@ -1,0 +1,15 @@
+<div class="menu">
+  <div class="menu__page-title">
+    <h1>
+      <span>Welcome to our heroes company</span>
+    </h1>
+    <div *ngIf="!isAuthPage()" class="menu__logout">
+      <a (click)="onLogout()">Logout</a>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!isAuthenticated" class="company-info">
+  <span>We able to train and manage our heroes as well.</span>
+  <span>Every hero in our company gain a professional training plan</span>
+</div>

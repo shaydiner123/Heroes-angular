@@ -1,0 +1,85 @@
+@import "../../sass/variables";
+
+:host {
+  position: relative;
+  top: 18rem;
+
+  @media (max-width: 366px) {
+    top: 24rem;
+  }
+  @media (max-width: 280px) {
+    top: 26rem;
+  }
+}
+
+.container {
+  margin: auto;
+  width: 200px;
+
+  form {
+    display: grid;
+    grid-row-gap: 3px;
+
+    div {
+      display: grid;
+      grid-row-gap: 3px;
+    }
+  }
+}
+
+div.warning-message {
+  color: $auth-warning-color;
+  ul {
+    padding-left: 1.2rem;
+  }
+}
+
+.btn {
+  margin: auto;
+  margin-top: 0.6rem;
+  border-radius: 8px;
+  border: 2px solid;
+}
+
+#submit-btn {
+  color: $auth-btn-text-color;
+  background-color: $auth-btn-bg-color;
+  border-color: $auth-btn-border-color;
+  width: 50%;
+
+  &:hover,
+  :active {
+    background-color: $auth-btn-text-color;
+    color: $auth-btn-bg-color;
+  }
+
+  &.disabled-btn {
+    background-color: $disabled-btn-bg-color;
+    color: $disabled-btn-text-color;
+    cursor: default;
+  }
+}
+
+#switch-btn-container {
+  width: 100%;
+  text-align: center;
+
+  #switch-btn {
+    width: 70%;
+    height: 2rem;
+    color: $auth-btn-text-color;
+    background-color: $auth-btn-bg-color;
+    border-color: $auth-btn-border-color;
+
+    &:hover,
+    :active {
+      background-color: $auth-btn-text-color;
+      color: $auth-btn-bg-color;
+    }
+  }
+}
+
+input.ng-invalid.ng-touched {
+  background-color: $invalid-input-bg-color;
+  border: 2px solid $auth-warning-color;
+}

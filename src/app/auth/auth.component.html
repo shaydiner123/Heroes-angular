@@ -1,0 +1,82 @@
+<app-header></app-header>
+<div class="container">
+  <div *ngIf="serverSideErros.length > 0">
+    <h1>Please correct the follwing</h1>
+    <ul>
+      <li *ngFor="let error of serverSideErros">{{ error }}</li>
+    </ul>
+  </div>
+
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
+    <div>
+      <label for="username">Username:</label>
+      <input
+        ngModel
+        name="username"
+        id="username"
+        type="text"
+        placeholder="please enter your username"
+        required
+        #username="ngModel"
+      />
+      <div class="warning-message" *ngIf="!username.valid && username.touched">
+        Please enter username
+      </div>
+    </div>
+
+    <div *ngIf="!isLoginMode">
+      <label for="email">Email:</label>
+      <input
+        ngModel
+        name="email"
+        id="email"
+        type="email"
+        placeholder="please enter your email"
+        required
+        email
+        #email="ngModel"
+      />
+      <div class="warning-message" *ngIf="!email.valid && email.touched">
+        Please enter valid email
+      </div>
+    </div>
+
+    <div>
+      <label for="password">Password:</label>
+      <input
+        ngModel
+        name="password"
+        id="password"
+        type="password"
+        placeholder="please enter your password"
+        required
+        pattern="^(?=.*?[A-Z])(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$"
+        #password="ngModel"
+      />
+      <div class="warning-message" *ngIf="!password.valid && password.touched">
+        valid password should be at least 8 chars which contain : <br />
+        <ul>
+          <li>at least 1 capital letter</li>
+          <li>at least 1 digit</li>
+          <li>at lease 1 One non-alphanumeric char</li>
+        </ul>
+      </div>
+    </div>
+
+    <button
+      [ngClass]="f.invalid ? 'disabled-btn' : ''"
+      class="btn"
+      id="submit-btn"
+      type="submit"
+      [disabled]="!f.valid"
+    >
+      {{ isLoginMode ? "Login" : "Signup" }}
+    </button>
+  </form>
+
+  <div id="switch-btn-container">
+    <button class="btn" id="switch-btn" type="button" (click)="switchMode()">
+      Switch to {{ isLoginMode ? "sign-up" : "login" }}
+    </button>
+  </div>
+</div>

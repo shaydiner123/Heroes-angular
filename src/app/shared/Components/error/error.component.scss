@@ -1,0 +1,34 @@
+:host {
+  display: block;
+  position: fixed;
+  width: 70vw;
+  top: 14rem;
+  z-index: 100;
+  left: 15vw;
+}
+
+div {
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: red;
+
+  h1 {
+    color: darkred;
+    font-weight: 800;
+  }
+
+  p {
+    color: white;
+    width: 80%;
+  }
+
+  button {
+    color: white;
+    background-color: red;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid white;
+    padding: 4px;
+  }
+}
